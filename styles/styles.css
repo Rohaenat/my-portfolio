@@ -65,13 +65,6 @@ body {
     margin: 2px 0; /* Set margin-top and margin-bottom to 2 units */
 }
 
-/* CSS for the image */
-.profile-image {
-    width: 650px;
-    height: auto;
-    flex-shrink: 0;
-}
-
 /* CSS for the rounded button */
 .rounded-button {
     background-color: #B162FF; /* Background color for the button */
@@ -100,7 +93,7 @@ body {
 
 .about-section h1 {
     color: #FFF;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     padding: 20px 0;
 }
@@ -117,4 +110,72 @@ body {
     font-size: 16px; /* Adjust the font size as needed */
     text-align: justify;
     margin: 0;
+}
+
+/* CSS for the "Objectives" div */
+.sec-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the div */
+}
+
+/* CSS for the "Read More" button */
+.read-more-button {
+    background-color: #000; /* Background color for the button */
+    color: #FFF; /* Text color for the button */
+    border: none;
+    border-radius: 20px; /* Round the button corners */
+    padding: 10px 20px; /* Adjust the button size */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 30px; /* Add some spacing between the button and the text */
+    cursor: pointer;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25)
+}
+
+/* Default font size for body */
+body {
+    font-size: 16px;
+}
+
+/* CSS for larger screens */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px; /* Increase the font size for larger screens */
+    }
+    .about-section {
+        flex-direction: row; /* Change to a row layout for larger screens */
+    }
+    .first-sect, .sec-sect {
+        flex-basis: 50%; /* Equal width for larger screens */
+        margin: 0 20px; /* Add spacing between the divs */
+    }
+    .about-section h1 {
+        font-size: 24px; /* Larger heading size for larger screens */
+    }
+    .first-sect p, .sec-sect p {
+        font-size: 18px; /* Larger text size for larger screens */
+    }
+}
+
+/* CSS for smaller screens */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Reduce the font size for smaller screens */
+    }
+    .about-section {
+        flex-direction: column; /* Change to a column layout for smaller screens */
+    }
+    .first-sect, .sec-sect {
+        flex-basis: 100%; /* Full width for smaller screens */
+        margin: 0; /* Remove spacing between the divs */
+    }
+    .about-section h1 {
+        font-size: 20px; /* Smaller heading size for smaller screens */
+    }
+    .first-sect p, .sec-sect p {
+        font-size: 16px; /* Smaller text size for smaller screens */
+    }
 }
