@@ -5,25 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohaenat Eniola Mustapha - Portfolio</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <style>
+        /* Add animation styles to your existing CSS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animation to the heading elements and the button */
+        .heading, .subheading, .rounded-button {
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .first-sect.bounce, .sec-sect.bounce {
+            animation: bounce 1.5s ease-in-out;
+        }
+
+        /* Your existing styles */
+        .section-links {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            background-color: black;
+        }
+
+        .section-link {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            margin: 20px 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .section-link:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #B162FF;
+        }
+
+        .section-link:hover::after,
+        .active-section-link::after {
+            width: 100%;
+        }
+
+        .hidden-section {
+            display: none;
+            color: #fff;
+            padding: 20px;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="body-color">
         <div class="navbar">
-            <a href="#about">ABOUT</a>
-            <a href="#portfolio">PORTFOLIO</a>
-            <a href="#contact">CONTACT</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#portfolio" class="nav-link">PORTFOLIO</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
         </div>
     
         <div class="right-content">
             <div class="content-container">
                 <p class="heading">Hi, I am <name class="color-heading">Rohaenat Eniola Mustapha</name></p>
                 <p class="subheading">I am a software developer</p>
-                <a class="rounded-button" href="#">About Me</a>
+                <a class="rounded-button" href="#about">About Me</a>
             </div>
         </div>
     </div>
 
-    <div class="about-section">
+    <div class="about-section" id="about">
         <div class="first-sect">
             <h1>ABOUT</h1>
             <p>A dedicated student at the African Leadership University pursuing a degree in Software Engineering with a planned specialization in Full Stack Web Development. 
@@ -42,5 +115,235 @@
         </div>
     </div>
 
-    <script src="./scripts/script.js"></script>
+    <!-- Section Links -->
+    <div class="section-links">
+        <div href="#skills" class="section-link" onclick="showSection('skills')">Skills</div>
+        <div href="#education" class="section-link" onclick="showSection('education')">Education</div>
+        <div href="#experience" class="section-link" onclick="showSection('experience')">Experience</div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="hidden-section" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container" id="skillsContainer">
+            <!-- Each skill is represented as a card -->
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <!-- Add more languages as needed -->
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <ul>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>Ruby</li>
+                    <li>Django</li>
+                    <!-- Add more frameworks/libraries as needed -->
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database</h3>
+                <ul>
+                    <li>SQL (MySQL, SQLLite)</li>
+                    <!-- Add more database technologies as needed -->
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Interpersonal</h3>
+                <ul>
+                    <li>Listening</li>
+                    <li>Adaptability</li>
+                    <li>Problem solving</li>
+                    <li>Writing</li>
+                    <li>Communication</li>
+                    <li>Collaboration</li>
+                    <li>Public Speaking</li>
+                    <li>Leadership</li>
+                    <!-- Add more soft skills as needed -->
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Design</h3>
+                <ul>
+                    <li>UI/UX</li>
+                    <li>Product design</li>
+                    <!-- Add more design skills as needed -->
+                </ul>
+            </div>
+
+            <!-- Add more skill categories and cards as needed -->
+        </div>
+    </div>
+
+     <!-- Education Section -->
+    <div class="hidden-section" id="education">
+        <!-- Content for the Education section -->
+        <h2>Education</h2>
+
+        <!-- Entry 1: Heritage Global Academy -->
+        <div class="education-entry">
+            <h3>SEPT 17, 2016 – SEPT 28, 2021 • HERITAGE GLOBAL ACADEMY</h3>
+            <p>Health Prefect</p>
+            <p>Award for finishing reading the whole Qur’an in the first 15 days</p>
+        </div>
+
+        <!-- Entry 2: African Leadership University -->
+        <div class="education-entry">
+            <h3>JAN 9, 2023 – TO DATE • AFRICAN LEADERSHIP UNIVERSITY</h3>
+            <p>Joined the Information team for calling students to attend ALU.</p>
+            <p>Joined the Design club for designing posters for events happening in the school.</p>
+        </div>
+
+        <!-- Additional Entry -->
+    </div>
+
+    <!-- Experience Section -->
+    <div class="hidden-section" id="experience">
+        <!-- Content for the Experience section -->
+        <h2>Experience</h2>
+
+        <!-- Entry 1: Volunteering for ALU Student Outreach -->
+        <div class="experience-entry">
+            <h3>VOLUNTEER • SEPT 21, 2023 • ALU STUDENT OUTREACH TEAM</h3>
+            <p>Volunteered to join a school team that reaches out to students and explains how and why attending ALU (my school) is the best school to go to.</p>
+        </div>
+
+        <!-- Entry 2: Health Prefect at Secondary School -->
+        <div class="experience-entry">
+            <h3>HEALTH PREFECT • HERITAGE GLOBAL ACADEMY</h3>
+            <p>Volunteered to be the health prefect of the school.</p><br>
+            <p>Responsibilities:</p>
+            <ul>
+                <li>Ensure students adhere to cleanliness.</li>
+                <li>Ensure students take their drugs on time.</li>
+                <li>Always make sure students are hygienically good.</li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <p style="text-align: center;">&copy; 2023 Rohaenat Eniola Mustapha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add new skills dynamically
+            const skillsContainer = document.getElementById('skillsContainer');
+
+            Object.keys(additionalSkills).forEach(category => {
+                const skillCard = document.createElement('div');
+                skillCard.className = 'skill-card';
+
+                const categoryHeading = document.createElement('h3');
+                categoryHeading.textContent = category;
+
+                const skillList = document.createElement('ul');
+                additionalSkills[category].forEach(skill => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = skill;
+                    skillList.appendChild(listItem);
+                });
+
+                skillCard.appendChild(categoryHeading);
+                skillCard.appendChild(skillList);
+                skillsContainer.appendChild(skillCard);
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const sectionLinks = document.querySelectorAll('.section-link');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove the "active" class from all section links
+                    sectionLinks.forEach(link => {
+                        link.classList.remove('active-section-link');
+                    });
+
+                    // Add the "active" class to the current section link
+                    const currentLinkId = entry.target.getAttribute('data-target');
+                    const currentLink = document.querySelector(`.section-link[data-target="${currentLinkId}"]`);
+                    currentLink.classList.add('active-section-link');
+                }
+            });
+        }, { threshold: 0.5 }); /* Adjust the threshold as needed */
+
+        sectionLinks.forEach(link => {
+            observer.observe(document.getElementById(link.getAttribute('data-target')));
+        });
+    });
+    </script>
+
+    <script>
+        // JavaScript for smooth scrolling
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('.nav-link, .rounded-button, .section-link, .hidden-section');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    // Calculate the distance between the target element and the top of the page
+                    const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY;
+
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // JavaScript to add bounce class when the sections are in view
+        const firstSect = document.getElementById('.first-sect');
+        const secSect = document.getElementById('.sec-sect');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('bounce');
+                } else {
+                    entry.target.classList.remove('bounce');
+                }
+            });
+        }, { threshold: 1.0 });
+    </script>
+
+    <script>
+        observer.observe(firstSect);
+        observer.observe(secSect);
+
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.hidden-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
+    </script>
 </body>

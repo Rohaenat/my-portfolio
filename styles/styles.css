@@ -179,3 +179,195 @@ body {
         font-size: 16px; /* Smaller text size for smaller screens */
     }
 }
+
+/* Add a container for the skills to create a grid */
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Add styles for the line under the active link */
+.section-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially set to 0 width */
+    height: 2px;
+    background-color: #B162FF;
+    transition: width 0.3s ease; /* Add transition for smooth width change */
+}
+
+.section-link.active-section-link::after {
+    width: 100%;
+}
+
+/* Adjust styles for the "Skills" section */
+.hidden-section#skills {
+    text-align: center;
+}
+
+.skill-card {
+    background-color: #B162FF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Adjust the width to create three in a row */
+    text-align: left; /* Align text within the card to the left */
+    box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 767px) {
+    .skill-card {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+/* Adjust styles for visible sections */
+.hidden-section.active-section {
+    opacity: 1;
+    display: block;
+}
+
+/* Additional styles for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust styles for section links */
+.section-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+}
+
+.section-link {
+    text-decoration: none;
+    color: #FFF;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Styles for the Education section */
+.hidden-section#education {
+    text-align: center;
+}
+
+.education-entry {
+    background-color: #B162FF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    width: 70%;
+    text-align: left; /* Align text within the entry to the left */
+    box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.education-entry h3 {
+    color: #FFF;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.education-entry p {
+    color: #fff;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 767px) {
+    .education-entry {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}
+
+/* Styles for the Experience section */
+.hidden-section#experience {
+    text-align: center;
+}
+
+.experience-entry {
+    background-color: #B162FF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    width: 70%;
+    text-align: left; /* Align text within the entry to the left */
+    box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.experience-entry h3 {
+    color: #FFF;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.experience-entry p {
+    color: #fff;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.experience-entry ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-entry li {
+    margin-bottom: 5px;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 767px) {
+    .experience-entry {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}
+
+/* Styles for the Skills section */
+#skills {
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill-card {
+    background-color: #B162FF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.skill-card h3 {
+    color: #FFF;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.skill-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-card li {
+    color: #fff;
+    font-size: 16px;
+    margin: 5px 0;
+}
