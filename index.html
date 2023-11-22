@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohaenat Eniola Mustapha - Portfolio</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Add animation styles to your existing CSS */
         @keyframes fadeInUp {
@@ -224,6 +225,64 @@
         </div>
     </div>
 
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                 <h1 class="sub-title"> Contact me</h1>
+                 <p> <i class='bx bx-send'></i>eniolamusty@gmail.com</p>
+                 <p> <i class='bx bx-phone-call'></i>+234 916 017 8151</p>
+                 <div class="social-icons">
+                    <a href="https://www.instagram.com/_its__enny/"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://twitter.com/rohaenat"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/rohaenat-mustapha-897020269/"><i class='bx bxl-linkedin'></i></a>
+                 </div>
+                 <a href="cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form  name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="Email" placeholder="your email"required>
+                        <textarea name="Message"  rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxY8J8VO_Hot_7-apb-P2Ak7uVx--2S_B1u1JkQpeEfNhs8AJvZFWlkI28BqPnBlO0F/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById('msg')
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML='message sent successfully'
+                    setTimeout(function(){
+                        msg.innerHTML=''
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle form submission
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // You can add form submission logic here
+                // For example, send the form data to a server using AJAX
+                // or navigate to a "thank you" page.
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
