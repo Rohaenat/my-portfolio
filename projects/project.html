@@ -1,48 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Showcase</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>Project Showcase</h1>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Project Showcase</h1>
+    </header>
 
-        <section class="project">
-            <h2>Project Name</h2>
-            <p class="project-description">
-                A brief description of the project and its objectives. Highlight key features and goals.
-            </p>
+    <section class="project">
+        <h2 id="projectName">Project Name</h2>
+        <p class="project-description" id="projectDescription">
+            A brief description of the project and its objectives. Highlight key features and goals.
+        </p>
 
-            <div class="project-details">
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <!-- Add more technologies as needed -->
-                    </ul>
-                </div>
-                <div>
-                    <h3>Project Duration</h3>
-                    <p>Start Date - End Date</p>
-                </div>
+        <div class="project-details">
+            <div>
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <!-- Add more technologies as needed -->
+                </ul>
             </div>
-
-            <div class="project-links">
-                <a href="#" target="_blank">Live Demo</a>
-                <a href="#" target="_blank">GitHub Repository</a>
+            <div>
+                <h3>Project Duration</h3>
+                <p>Start Date - End Date</p>
             </div>
-        </section>
+        </div>
 
-        <!-- Repeat the above section for each project -->
+        <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">GitHub Repository</a>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
-        </footer>
-    </body>
+    <section class="project">
+        <h2 id="projectName">Project Name</h2>
+        <p class="project-description" id="projectDescription">
+            A brief description of the project and its objectives. Highlight key features and goals.
+        </p>
+
+        <div class="project-details">
+            <div>
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <!-- Add more technologies as needed -->
+                </ul>
+            </div>
+            <div>
+                <h3>Project Duration</h3>
+                <p>Start Date - End Date</p>
+            </div>
+        </div>
+
+        <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">GitHub Repository</a>
+        </div>
+    </section>
+
+    <!-- Include the JavaScript script here -->
+    <script>
+        // JavaScript for toggling project description
+        document.addEventListener('DOMContentLoaded', function () {
+            var projectName = document.getElementById('projectName');
+            var projectDescription = document.getElementById('projectDescription');
+
+            // Add a click event listener to the project name
+            projectName.addEventListener('click', function () {
+                // Toggle the visibility of the project description
+                if (projectDescription.style.display === 'none' || projectDescription.style.display === '') {
+                    projectDescription.style.display = 'block';
+                } else {
+                    projectDescription.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2023 Rohaenat Eniola Mustapha. All rights reserved.</p>
+    </footer>
+</body>
 </html>
